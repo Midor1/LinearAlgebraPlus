@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="pw.midor.matrixcalculator">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.DeviceDefault">
+        <activity
+            android:name=".InitActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="线代+:你想要什么?"
+            android:launchMode="singleInstance">
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="线代+:请输入一个矩阵!"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".SecondaryActivity"
+            android:label="线代+:输入第二个矩阵!"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".ResultActivity"
+            android:label="线代+:结果页"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".DifficultySelectionActivity"
+            android:label="线代+:选择难度!"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".EasyActivity"
+            android:label="线代+:练习模式-简单"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".RegularActivity"
+            android:label="线代+:练习模式-中等"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".HardActivity"
+            android:label="线代+:练习模式-困难"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".OpenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

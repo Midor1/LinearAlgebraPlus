@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">线代+</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title">线代+</string>
+    <string name="btn">点我进入</string>
+</resources>

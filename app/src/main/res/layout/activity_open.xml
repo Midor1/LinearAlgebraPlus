@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="pw.midor.matrixcalculator.MainActivity">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:padding="0dp"
+        android:gravity="center"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.06"
+            android:src="@mipmap/icon" />
+
+        <TextView
+            android:layout_width="358dp"
+            android:layout_height="wrap_content"
+            android:text="线代+"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal"
+            android:textSize="36dp"
+            android:textIsSelectable="true"
+            android:gravity="center"
+            android:layout_weight="0.06" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.21"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="你的专属线代助手\nDeveloped by Midor\nv1.0 beta\n\n\n\n\nhttp://apkl.oss-cn-qingdao.aliyuncs.com/pw.linearalgebraplus_v1.0beta.apk\nhttps://github.com/llj112293/LinearAlgebraPlus"
+                android:id="@+id/textView2"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
