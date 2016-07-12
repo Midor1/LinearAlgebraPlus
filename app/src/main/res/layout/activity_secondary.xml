@@ -29,7 +29,7 @@
                     android:ems="10"
                     android:id="@+id/P11"
                     android:layout_weight="1"
-                    android:text="0" />
+                    android:text="1" />
 
                 <EditText
                     android:layout_width="wrap_content"
@@ -82,7 +82,7 @@
                     android:ems="10"
                     android:id="@+id/P22"
                     android:layout_weight="1"
-                    android:text="0" />
+                    android:text="1" />
 
                 <EditText
                     android:layout_width="wrap_content"
@@ -136,7 +136,7 @@
                     android:ems="10"
                     android:id="@+id/P33"
                     android:layout_weight="1"
-                    android:text="0" />
+                    android:text="1" />
 
                 <EditText
                     android:layout_width="wrap_content"
@@ -189,7 +189,7 @@
                     android:ems="10"
                     android:id="@+id/P44"
                     android:layout_weight="1"
-                    android:text="0" />
+                    android:text="1" />
             </LinearLayout>
 
             <LinearLayout

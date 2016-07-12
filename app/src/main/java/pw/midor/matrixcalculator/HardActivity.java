@@ -287,7 +287,7 @@ public class HardActivity extends Activity implements View.OnClickListener{
                     score+=10;
             }
             if(correct==ans)
-                Toast.makeText(this, "答案正确" , Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "答案正确" , Toast.LENGTH_SHORT).show();
             else
                 Toast.makeText(this, "答案不正确,正确答案为" + Integer.toString(correct) + ".", Toast.LENGTH_LONG).show();
         }

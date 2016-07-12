@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="pw.midor.matrixcalculator.MainActivity">
+    tools:context="pw.midor.matrixcalculator.Main3Activity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -24,7 +24,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.20">
+            android:layout_weight="0.20"
+            android:layout_marginTop="20dp">
 
             <EditText
                 android:layout_width="wrap_content"
@@ -53,14 +54,6 @@
                 android:layout_weight="1"
                 android:text="0" />
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned|numberDecimal"
-                android:ems="10"
-                android:id="@+id/p14"
-                android:layout_weight="1"
-                android:text="0" />
         </LinearLayout>
 
         <LinearLayout
@@ -94,15 +87,6 @@
                 android:inputType="numberSigned|numberDecimal"
                 android:ems="10"
                 android:id="@+id/p23"
-                android:layout_weight="1"
-                android:text="0" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned|numberDecimal"
-                android:ems="10"
-                android:id="@+id/p24"
                 android:layout_weight="1"
                 android:text="0" />
 
@@ -142,58 +126,6 @@
                 android:layout_weight="1"
                 android:text="1" />
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned|numberDecimal"
-                android:ems="10"
-                android:id="@+id/p34"
-                android:layout_weight="1"
-                android:text="0" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.20">
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned|numberDecimal"
-                android:ems="10"
-                android:id="@+id/p41"
-                android:layout_weight="1"
-                android:text="0" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned|numberDecimal"
-                android:ems="10"
-                android:id="@+id/p42"
-                android:layout_weight="1"
-                android:text="0" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned|numberDecimal"
-                android:ems="10"
-                android:id="@+id/p43"
-                android:layout_weight="1"
-                android:text="0" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned|numberDecimal"
-                android:ems="10"
-                android:id="@+id/p44"
-                android:layout_weight="1"
-                android:text="1" />
         </LinearLayout>
 
         <LinearLayout

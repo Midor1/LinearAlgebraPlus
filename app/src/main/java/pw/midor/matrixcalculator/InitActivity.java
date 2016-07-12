@@ -35,7 +35,7 @@ public class InitActivity extends Activity{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(list.get(position).equals("矩阵计算器")) {
-                    Intent intent = new Intent(This,MainActivity.class);
+                    Intent intent = new Intent(This,ChooseActivity.class);
                     startActivity(intent);
                 }
                 if(list.get(position).equals("矩阵运算练习")) {

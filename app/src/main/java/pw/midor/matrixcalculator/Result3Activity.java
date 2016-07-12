@@ -9,13 +9,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class ResultActivity extends Activity implements View.OnClickListener{
+public class Result3Activity extends Activity implements View.OnClickListener{
     Button button;
-    double res[][]=new double[4][4];
+    double res[][]=new double[3][3];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_result);
+        setContentView(R.layout.activity_result3);
         int typ = setView();
         TextView Result = (TextView)findViewById(R.id.resultText);
         if(typ==1)
@@ -41,31 +41,23 @@ public class ResultActivity extends Activity implements View.OnClickListener{
         res[0]=bundle.getDoubleArray("matrix10");
         res[1]=bundle.getDoubleArray("matrix11");
         res[2]=bundle.getDoubleArray("matrix12");
-        res[3]=bundle.getDoubleArray("matrix13");
         int typ=bundle.getInt("type");
-        EditText edittext[][] = new EditText[4][4];
+        EditText edittext[][] = new EditText[3][3];
         edittext[0][0] = (EditText)findViewById(R.id.r11);
         edittext[0][1] = (EditText)findViewById(R.id.r12);
         edittext[0][2] = (EditText)findViewById(R.id.r13);
-        edittext[0][3] = (EditText)findViewById(R.id.r14);
         edittext[1][0] = (EditText)findViewById(R.id.r21);
         edittext[1][1] = (EditText)findViewById(R.id.r22);
         edittext[1][2] = (EditText)findViewById(R.id.r23);
-        edittext[1][3] = (EditText)findViewById(R.id.r24);
         edittext[2][0] = (EditText)findViewById(R.id.r31);
         edittext[2][1] = (EditText)findViewById(R.id.r32);
         edittext[2][2] = (EditText)findViewById(R.id.r33);
-        edittext[2][3] = (EditText)findViewById(R.id.r34);
-        edittext[3][0] = (EditText)findViewById(R.id.r41);
-        edittext[3][1] = (EditText)findViewById(R.id.r42);
-        edittext[3][2] = (EditText)findViewById(R.id.r43);
-        edittext[3][3] = (EditText)findViewById(R.id.r44);
-        for(int i=0;i<4;i++)
-            for(int j=0;j<4;j++)
+        for(int i=0;i<3;i++)
+            for(int j=0;j<3;j++)
                 if(Math.abs(res[i][j])<=1E-8||Double.isNaN(res[i][j]))
                     res[i][j]=0.0;
-        for(int i=0;i<4;i++)
-            for(int j=0;j<4;j++)
+        for(int i=0;i<3;i++)
+            for(int j=0;j<3;j++)
                 edittext[i][j].setText(Double.toString(res[i][j]));
         return typ;
     }
@@ -74,6 +66,6 @@ public class ResultActivity extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         if(v.getId()==R.id.resultBack)
-        finish();
+            finish();
     }
 }

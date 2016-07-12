@@ -12,7 +12,7 @@
             android:name=".InitActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="线代+"
-            android:launchMode="singleInstance"></activity>
+            android:launchMode="singleInstance" />
         <activity
             android:name=".MainActivity"
             android:label="线代+:请输入一个矩阵!"
@@ -53,8 +53,36 @@
         </activity>
         <activity
             android:name=".AboutActivity"
-            android:label="线代+"
+            android:label="线代+:关于我们"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".Main2Activity"
+            android:label="线代+:请输入一个矩阵!"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".Result2Activity"
+            android:label="线代+:结果页"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".Secondary2Activity"
+            android:label="线代+:输入第二个矩阵!"
             android:launchMode="singleInstance"/>
+        <activity
+            android:name=".ChooseActivity"
+            android:label="线代+:请选择矩阵阶数!"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".Main3Activity"
+            android:label="线代+:请输入一个矩阵!"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".Secondary3Activity"
+            android:label="线代+:输入第二个矩阵!"
+            android:launchMode="singleInstance"/>
+        <activity
+            android:name=".Result3Activity"
+            android:label="线代+:结果页"
+            android:launchMode="singleInstance" />
     </application>
 
 </manifest>

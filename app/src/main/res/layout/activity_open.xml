@@ -53,7 +53,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="你的专属线代助手\nDeveloped by Midor\nv1.0 beta\n\n\n\n\nhttp://apkl.oss-cn-qingdao.aliyuncs.com/pw.linearalgebraplus_v1.0beta.apk\nhttps://github.com/llj112293/LinearAlgebraPlus"
+                android:text="你的专属线代助手\nDeveloped by Midor\nv1.02 beta\n\n\n\n\n\n\nhttps://github.com/Midor1/LinearAlgebraPlus"
                 android:id="@+id/textView2"
                 android:gravity="center"
                 android:layout_marginBottom="20dp"

@@ -39,7 +39,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="向右滑动加载更多"
+                android:text="从屏幕左端向右滑动以加载更多"
                 android:id="@+id/textView3"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp" />

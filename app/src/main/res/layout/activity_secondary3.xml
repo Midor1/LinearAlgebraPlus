@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="pw.midor.matrixcalculator.MainActivity">
-
+    tools:context="pw.midor.matrixcalculator.SecondaryActivity">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -24,14 +20,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.20">
+            android:layout_weight="0.20"
+            android:layout_marginTop="20dp">
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="numberSigned|numberDecimal"
                 android:ems="10"
-                android:id="@+id/p11"
+                android:id="@+id/P11"
                 android:layout_weight="1"
                 android:text="1" />
 
@@ -40,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberSigned|numberDecimal"
                 android:ems="10"
-                android:id="@+id/p12"
+                android:id="@+id/P12"
                 android:layout_weight="1"
                 android:text="0" />
 
@@ -49,60 +46,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberSigned|numberDecimal"
                 android:ems="10"
-                android:id="@+id/p13"
-                android:layout_weight="1"
-                android:text="0" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned|numberDecimal"
-                android:ems="10"
-                android:id="@+id/p14"
-                android:layout_weight="1"
-                android:text="0" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.20">
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned|numberDecimal"
-                android:ems="10"
-                android:id="@+id/p21"
-                android:layout_weight="1"
-                android:text="0" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned|numberDecimal"
-                android:ems="10"
-                android:id="@+id/p22"
-                android:layout_weight="1"
-                android:text="1" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned|numberDecimal"
-                android:ems="10"
-                android:id="@+id/p23"
-                android:layout_weight="1"
-                android:text="0" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned|numberDecimal"
-                android:ems="10"
-                android:id="@+id/p24"
+                android:id="@+id/P13"
                 android:layout_weight="1"
                 android:text="0" />
 
@@ -120,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberSigned|numberDecimal"
                 android:ems="10"
-                android:id="@+id/p31"
+                android:id="@+id/P21"
                 android:layout_weight="1"
                 android:text="0" />
 
@@ -129,16 +73,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberSigned|numberDecimal"
                 android:ems="10"
-                android:id="@+id/p32"
-                android:layout_weight="1"
-                android:text="0" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned|numberDecimal"
-                android:ems="10"
-                android:id="@+id/p33"
+                android:id="@+id/P22"
                 android:layout_weight="1"
                 android:text="1" />
 
@@ -147,9 +82,10 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberSigned|numberDecimal"
                 android:ems="10"
-                android:id="@+id/p34"
+                android:id="@+id/P23"
                 android:layout_weight="1"
                 android:text="0" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -164,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberSigned|numberDecimal"
                 android:ems="10"
-                android:id="@+id/p41"
+                android:id="@+id/P31"
                 android:layout_weight="1"
                 android:text="0" />
 
@@ -173,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberSigned|numberDecimal"
                 android:ems="10"
-                android:id="@+id/p42"
+                android:id="@+id/P32"
                 android:layout_weight="1"
                 android:text="0" />
 
@@ -182,18 +118,10 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberSigned|numberDecimal"
                 android:ems="10"
-                android:id="@+id/p43"
-                android:layout_weight="1"
-                android:text="0" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned|numberDecimal"
-                android:ems="10"
-                android:id="@+id/p44"
+                android:id="@+id/P33"
                 android:layout_weight="1"
                 android:text="1" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -201,29 +129,43 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.16"
-            android:gravity="center"
-            android:paddingLeft="11dp"
-            android:paddingRight="11dp">
+            android:layout_weight="0.16">
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="输入第二个矩阵"
-                android:id="@+id/next"
-                android:layout_gravity="center_vertical" />
+                android:text="矩阵加法"
+                android:id="@+id/plus"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp" />
 
 
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="对此矩阵进行运算"
-                android:id="@+id/more"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="20dp" />
+                android:text="矩阵减法"
+                android:id="@+id/minus"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="矩阵乘法"
+                android:id="@+id/multiply"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="返回"
+                android:id="@+id/back"
+                android:layout_gravity="center" />
         </LinearLayout>
 
     </LinearLayout>
+
 
 </RelativeLayout>
