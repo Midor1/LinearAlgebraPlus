@@ -3,6 +3,7 @@ package pw.midor.matrixcalculator;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -200,6 +201,16 @@ public class HardActivity extends Activity implements View.OnClickListener{
             new  AlertDialog.Builder(this)
                     .setTitle("练习结束")
                     .setMessage("你的得分为:"+Integer.toString(score)+"分!")
+                    .setNegativeButton("分享", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent();
+                            intent.setAction(Intent.ACTION_SEND);
+                            intent.putExtra(Intent.EXTRA_TEXT," 我在线代+的矩阵运算练习困难模式下获得了" +Integer.toString(score) + "分!\n线代+，你专属的线代助手！http://apkl.oss-cn-qingdao.aliyuncs.com/pw.linearalgebraplus_v1.0beta.apk");
+                            intent.setType("text/plain");
+                            startActivity(Intent.createChooser(intent,"分享你的成绩"));
+                        }
+                    })
                     .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
