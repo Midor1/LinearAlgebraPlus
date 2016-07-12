@@ -221,27 +221,32 @@ public class EasyActivity extends Activity implements View.OnClickListener{
                 Toast.makeText(this, "请输入答案!" , Toast.LENGTH_SHORT).show();
                 return;
             }
+            int correct=0;
             ans=Integer.parseInt(answer.getText().toString());
             if(qNum==0||qNum==3) {
-                int correct=Rank(sh,-1,2);
+                correct=Rank(sh,-1,2);
                 if(correct==ans)
                     score+=10;
             }
             else if(qNum==1) {
-                int correct = (int)(sh[0][0]*sh[1][1]-sh[1][0]*sh[0][1]);
+                correct = (int)(sh[0][0]*sh[1][1]-sh[1][0]*sh[0][1]);
                 if(correct==ans)
                     score+=10;
             }
             else if(qNum==2) {
-                int correct = (int)(sh[0][0]+sh[1][1]-sh[0][1]-sh[1][0]);
+                correct = (int)(sh[0][0]+sh[1][1]-sh[0][1]-sh[1][0]);
                 if(correct==ans)
                     score+=10;
             }
             else if(qNum==4) {
-                int correct = (int)(sh[0][0]+sh[1][1]);
+                correct = (int)(sh[0][0]+sh[1][1]);
                 if(correct==ans)
                     score+=10;
             }
+            if(correct==ans)
+                Toast.makeText(this, "答案正确" , Toast.LENGTH_LONG).show();
+            else
+                Toast.makeText(this, "答案不正确,正确答案为" + Integer.toString(correct) + ".", Toast.LENGTH_LONG).show();
         }
         else if(v.getId()==R.id.easyBack) {
             finish();

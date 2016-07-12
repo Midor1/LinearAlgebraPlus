@@ -93,19 +93,35 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.20"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/status"
+                android:layout_gravity="center"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.16"><EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned"
-                android:ems="10"
-                android:id="@+id/answer"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:hint="在这里填写答案" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberSigned"
+            android:ems="10"
+            android:id="@+id/answer"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:hint="在这里填写答案" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -125,21 +141,6 @@
                 android:layout_marginLeft="5dp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.20"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Text"
-                android:id="@+id/status"
-                android:layout_gravity="center"
-                android:textSize="20sp" />
-        </LinearLayout>
 
     </LinearLayout>
 </RelativeLayout>

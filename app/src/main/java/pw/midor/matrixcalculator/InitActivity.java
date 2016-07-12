@@ -7,30 +7,50 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
-public class InitActivity extends Activity implements View.OnClickListener {
-    Button cal,play;
+import java.util.ArrayList;
+import java.util.List;
+
+public class InitActivity extends Activity{
+    final InitActivity This = this;
+    ListView lv;
+    ArrayList<String> list = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_init);
-        cal = (Button)findViewById(R.id.cal);
-        cal.setOnClickListener(this);
-        play = (Button)findViewById(R.id.play);
-        play.setOnClickListener(this);
-    }
-
-    public void onClick(View view) {
-        if(view.getId()==R.id.cal) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }
-        else if(view.getId()==R.id.play) {
-            Intent intent = new Intent(this, DifficultySelectionActivity.class);
-            startActivity(intent);
-        }
+        lv = (ListView)findViewById(R.id.listView);
+        list.add("矩阵计算器");
+        list.add("矩阵运算练习");
+        list.add("关于");
+        list.add("退出");
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list);
+        lv.setAdapter(adapter);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(list.get(position).equals("矩阵计算器")) {
+                    Intent intent = new Intent(This,MainActivity.class);
+                    startActivity(intent);
+                }
+                if(list.get(position).equals("矩阵运算练习")) {
+                    Intent intent = new Intent(This,DifficultySelectionActivity.class);
+                    startActivity(intent);
+                }
+                if(list.get(position).equals("关于")) {
+                    Intent intent = new Intent(This,AboutActivity.class);
+                    startActivity(intent);
+                }
+                if(list.get(position).equals("退出")) {
+                    finish();
+                }
+            }
+        });
     }
 
     private static boolean isExit = false;

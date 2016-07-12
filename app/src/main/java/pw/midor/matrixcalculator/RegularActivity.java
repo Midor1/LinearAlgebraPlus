@@ -218,23 +218,24 @@ public class RegularActivity extends Activity implements View.OnClickListener{
             for(int j=0;j<3;j++)
                 sh[i][j] = Integer.parseInt(m[i][j].getText().toString());
         if(v.getId()==R.id.submitRegular) {
+            int correct=0;
             if(answer.getText().toString().equals("")) {
                 Toast.makeText(this, "请输入答案!" , Toast.LENGTH_SHORT).show();
                 return;
             }
             ans=Integer.parseInt(answer.getText().toString());
             if(qNum==0) {
-                int correct=Rank(sh,-1,3);
+                correct=Rank(sh,-1,3);
                 if(correct==ans)
                     score+=10;
             }
             else if(qNum==1) {
-                int correct = (int)(sh[0][0]*sh[1][1]*sh[2][2]+sh[0][1]*sh[1][2]*sh[2][0]+sh[1][0]*sh[2][1]*sh[0][2]-sh[0][2]*sh[1][1]*sh[2][0]-sh[0][1]*sh[1][0]*sh[2][2]-sh[0][0]*sh[1][2]*sh[2][1]);
+                correct = (int)(sh[0][0]*sh[1][1]*sh[2][2]+sh[0][1]*sh[1][2]*sh[2][0]+sh[1][0]*sh[2][1]*sh[0][2]-sh[0][2]*sh[1][1]*sh[2][0]-sh[0][1]*sh[1][0]*sh[2][2]-sh[0][0]*sh[1][2]*sh[2][1]);
                 if(correct==ans)
                     score+=10;
             }
             else if(qNum==2) {
-                int correct=Rank(sh,-1,3);
+                correct=Rank(sh,-1,3);
                 if(correct==2) {
                     correct=1;
                 }
@@ -245,10 +246,14 @@ public class RegularActivity extends Activity implements View.OnClickListener{
                     score+=10;
             }
             else if(qNum==3) {
-                int correct = (int)(sh[0][0]+sh[1][1]+sh[2][2]);
+                correct = (int)(sh[0][0]+sh[1][1]+sh[2][2]);
                 if(correct==ans)
                     score+=10;
             }
+            if(correct==ans)
+                Toast.makeText(this, "答案正确" , Toast.LENGTH_LONG).show();
+            else
+                Toast.makeText(this, "答案不正确,正确答案为" + Integer.toString(correct) + ".", Toast.LENGTH_LONG).show();
         }
         else if(v.getId()==R.id.backRegular) {
             finish();

@@ -62,6 +62,10 @@ public class ResultActivity extends Activity implements View.OnClickListener{
         edittext[3][3] = (EditText)findViewById(R.id.r44);
         for(int i=0;i<4;i++)
             for(int j=0;j<4;j++)
+                if(Math.abs(res[i][j])<=1E-8)
+                    res[i][j]=0.0;
+        for(int i=0;i<4;i++)
+            for(int j=0;j<4;j++)
                 edittext[i][j].setText(Double.toString(res[i][j]));
         return typ;
     }

@@ -11,9 +11,8 @@
         <activity
             android:name=".InitActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="线代+:你想要什么?"
-            android:launchMode="singleInstance">
-        </activity>
+            android:label="线代+"
+            android:launchMode="singleInstance"></activity>
         <activity
             android:name=".MainActivity"
             android:label="线代+:请输入一个矩阵!"
@@ -52,6 +51,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AboutActivity"
+            android:label="线代+"
+            android:launchMode="singleInstance"/>
     </application>
 
 </manifest>
