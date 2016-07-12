@@ -1,3 +1,3 @@
 # LinearAlgebraPlus
 A linear algebra app
-Developed by students from the informatics department of Northeast University.
+Developed by students from the informatics department of Northeastern University.
