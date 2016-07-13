@@ -1,10 +1,12 @@
 package pw.midor.matrixcalculator;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,17 +15,33 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.alibaba.sdk.android.push.CloudPushService;
+import com.alibaba.sdk.android.push.CommonCallback;
+import com.alibaba.sdk.android.push.noonesdk.PushServiceFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class InitActivity extends Activity{
+    private static final String TAG = "Init";
+    private static boolean isExit = false;
     final InitActivity This = this;
     ListView lv;
     ArrayList<String> list = new ArrayList<>();
+    private Handler mHandler = new Handler() {
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            isExit = false;
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_init);
+        initCloudChannel(this);
         lv = (ListView)findViewById(R.id.listView);
         list.add("矩阵计算器");
         list.add("矩阵运算练习");
@@ -53,16 +71,21 @@ public class InitActivity extends Activity{
         });
     }
 
-    private static boolean isExit = false;
+    private void initCloudChannel(Context applicationContext) {
+        PushServiceFactory.init(applicationContext);
+        CloudPushService pushService = PushServiceFactory.getCloudPushService();
+        pushService.register(applicationContext, new CommonCallback() {
+            @Override
+            public void onSuccess(String response) {
+                Log.d(TAG, "init cloudchannel success");
+            }
 
-    private Handler mHandler = new Handler() {
-
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            isExit = false;
-        }
-    };
+            @Override
+            public void onFailed(String errorCode, String errorMessage) {
+                Log.d(TAG, "init cloudchannel failed -- errorcode:" + errorCode + " -- errorMessage:" + errorMessage);
+            }
+        });
+    }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

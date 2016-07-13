@@ -7,7 +7,9 @@
         android:icon="@mipmap/icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@android:style/Theme.DeviceDefault">
+        android:theme="@android:style/Theme.Material">
+        <meta-data android:name="com.alibaba.app.appkey" android:value="23405495"/> <!-- 请填写你自己的- appKey -->
+        <meta-data android:name="com.alibaba.app.appsecret" android:value="a9a1e5c34d191909647bffb8805798d0"/> <!-- 请填写你自己的appSecret -->
         <activity
             android:name=".InitActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -83,6 +85,80 @@
             android:name=".Result3Activity"
             android:label="线代+:结果页"
             android:launchMode="singleInstance" />
+        <service android:name="com.alibaba.sdk.android.push.ChannelService"
+            android:exported="true" android:process=":channel">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.SERVICE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.PING_V4" />
+                <category android:name="taobao" />
+            </intent-filter>
+        </service>
+        <!-- 消息接收服务 -->
+        <service android:name="com.alibaba.sdk.android.push.MsgService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.RECEIVE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.alibaba.sdk.android.push.NOTIFY_ACTION" />
+            </intent-filter>
+        </service>
+        <receiver android:name="anet.channel.heartbeat.HeartbeatManager$Receiver" >
+            <intent-filter>
+                <action android:name="anetwork.channel.intent.action.COMMAND" />
+            </intent-filter>
+        </receiver>
+        <!--消息接收监听器-->
+        <receiver android:name="com.alibaba.sdk.android.push.MessageReceiver">
+            <intent-filter>
+                <action android:name="com.alibaba.push2.action.NOTIFICATION_OPENED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.alibaba.push2.action.NOTIFICATION_REMOVED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.COMMAND" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.taobao.taobao.intent.action.COMMAND" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.RECEIVE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
     </application>
-
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!--进行网络访问和网络状态监控相关的权限声明-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--允许对sd卡进行读写操作-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--网络库使用，当网络操作时需要确保事务完成不被杀掉-->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--用于读取手机硬件信息等，用于机型过滤-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--选举使用，当应用有删除或者更新时需要重新选举，复用推送通道-->
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_CHANGED" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REPLACED" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!--允许监听启动完成事件-->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!--允许访问震动器-->
+    <uses-permission android:name="android.permission.VIBRATE" />
 </manifest>
