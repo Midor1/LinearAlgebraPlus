@@ -52,7 +52,7 @@ public class Secondary3Activity extends Activity implements View.OnClickListener
         double matrix2[][] = new double[3][3];
         for(int i=0;i<3;i++)
             for(int j=0;j<3;j++)
-                matrix2[i][j]=Double.parseDouble(Matrix[i][j].getText().toString());
+                matrix2[i][j]=Double.parseDouble(Matrix[i][j].getText().toString().equals("")?"0":Matrix[i][j].getText().toString());
         if(v.getId()==R.id.back)
             finish();
         else if(v.getId()==R.id.plus) {

@@ -196,7 +196,7 @@ public class EasyActivity extends Activity implements View.OnClickListener{
                         public void onClick(DialogInterface dialog, int which) {
                             Intent intent = new Intent();
                             intent.setAction(Intent.ACTION_SEND);
-                            intent.putExtra(Intent.EXTRA_TEXT," 我在线代+的矩阵运算练习简单模式下获得了" +Integer.toString(score) + "分!\n线代+，你专属的线代助手！http://apkl.oss-cn-qingdao.aliyuncs.com/pw.linearalgebraplus_v1.0beta.apk");
+                            intent.putExtra(Intent.EXTRA_TEXT," 我在线代+的矩阵运算练习简单模式下获得了" +Integer.toString(score) + "分!\n线代+，你专属的线代助手！\nhttp://midor.pw/subs/LinearAlgebraPlus.html");
                             intent.setType("text/plain");
                             startActivity(Intent.createChooser(intent,"分享你的成绩"));
                         }
@@ -223,10 +223,10 @@ public class EasyActivity extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         double sh[][] = new double[2][2];
-        sh[0][0] = Integer.parseInt(t00.getText().toString());
-        sh[0][1] = Integer.parseInt(t01.getText().toString());
-        sh[1][0] = Integer.parseInt(t10.getText().toString());
-        sh[1][1] = Integer.parseInt(t11.getText().toString());
+        sh[0][0] = Integer.parseInt(t00.getText().toString().equals("")?"0":t00.getText().toString());
+        sh[0][1] = Integer.parseInt(t01.getText().toString().equals("")?"0":t01.getText().toString());
+        sh[1][0] = Integer.parseInt(t10.getText().toString().equals("")?"0":t10.getText().toString());
+        sh[1][1] = Integer.parseInt(t11.getText().toString().equals("")?"0":t11.getText().toString());
         if(v.getId()==R.id.submit) {
             if(answer.getText().toString().equals("")) {
                 Toast.makeText(this, "请输入答案!" , Toast.LENGTH_SHORT).show();

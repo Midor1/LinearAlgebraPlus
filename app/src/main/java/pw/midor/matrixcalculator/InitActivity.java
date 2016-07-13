@@ -52,7 +52,8 @@ public class InitActivity extends Activity{
         list.add("矩阵计算器");
         list.add("矩阵运算练习");
         list.add("正定性与二次型");
-        list.add("公式与定理整理");
+        list.add("常用公式与定理");
+        list.add("帮助");
         list.add("关于");
         list.add("退出");
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list);
@@ -69,10 +70,10 @@ public class InitActivity extends Activity{
                     startActivity(intent);
                 }
                 if(list.get(position).equals("正定性与二次型")) {
-                    Intent intent = new Intent(This,DifficultySelectionActivity.class);
+                    Intent intent = new Intent(This,DefiniteActivity.class);
                     startActivity(intent);
                 }
-                if(list.get(position).equals("公式与定理整理")) {
+                if(list.get(position).equals("常用公式与定理")) {
                     Intent intent = new Intent("android.intent.action.VIEW");
                     intent.addCategory("android.intent.category.DEFAULT");
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -84,6 +85,10 @@ public class InitActivity extends Activity{
                     }
                     Uri uri = Uri.fromFile(new File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/LinearAlgebra.doc"));
                     intent.setDataAndType(uri, "application/msword");
+                    startActivity(intent);
+                }
+                if(list.get(position).equals("帮助")) {
+                    Intent intent = new Intent(This,HelpActivity.class);
                     startActivity(intent);
                 }
                 if(list.get(position).equals("关于")) {
@@ -127,6 +132,7 @@ public class InitActivity extends Activity{
             @Override
             public void onFailed(String errorCode, String errorMessage) {
                 Log.d(TAG, "init cloudchannel failed -- errorcode:" + errorCode + " -- errorMessage:" + errorMessage);
+                Toast.makeText(InitActivity.this,"未检测到可用网络，将不会收到推送" , Toast.LENGTH_LONG).show();
             }
         });
     }

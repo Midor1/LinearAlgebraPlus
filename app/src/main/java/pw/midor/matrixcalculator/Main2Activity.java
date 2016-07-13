@@ -17,30 +17,6 @@ import android.widget.Toast;
 public class Main2Activity extends Activity implements View.OnClickListener{
     TextView Matrix[][] = new TextView [2][2];
     Button next,more;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
-        setView();
-        next=(Button)findViewById(R.id.main2Next);
-        more=(Button)findViewById(R.id.main2More);
-        next.setOnClickListener(this);
-        more.setOnClickListener(this);
-    }
-    protected void setView()
-    {
-        Matrix[0][0]=(TextView)findViewById(R.id.main200);
-        Matrix[0][1]=(TextView)findViewById(R.id.main201);
-        Matrix[1][0]=(TextView)findViewById(R.id.main210);
-        Matrix[1][1]=(TextView)findViewById(R.id.main211);
-    }
-
-    final protected int Determination(int times) {
-        int ans=1;
-        for(int i=1;i<=times;i++)
-            ans=-ans;
-        return ans;
-    }
 
     public static int Hessenberg(double[][] Matrix,int n,double[][]ret)
     {
@@ -106,6 +82,7 @@ public class Main2Activity extends Activity implements View.OnClickListener{
         }
         return n+1;
     }
+
     ////////////
     public static void EigenValue(double[][]Matrix,int n,int LoopNu,int Erro,double[][]Ret)
     {
@@ -298,6 +275,32 @@ public class Main2Activity extends Activity implements View.OnClickListener{
         }
     }
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
+        setView();
+        next=(Button)findViewById(R.id.main2Next);
+        more=(Button)findViewById(R.id.main2More);
+        next.setOnClickListener(this);
+        more.setOnClickListener(this);
+    }
+
+    protected void setView()
+    {
+        Matrix[0][0]=(TextView)findViewById(R.id.main200);
+        Matrix[0][1]=(TextView)findViewById(R.id.main201);
+        Matrix[1][0]=(TextView)findViewById(R.id.main210);
+        Matrix[1][1]=(TextView)findViewById(R.id.main211);
+    }
+
+    final protected int Determination(int times) {
+        int ans=1;
+        for(int i=1;i<=times;i++)
+            ans=-ans;
+        return ans;
+    }
+
     final public int Rank(double[][] Matrix,int error_,int List)
     {
         int n=List;
@@ -460,7 +463,7 @@ public class Main2Activity extends Activity implements View.OnClickListener{
         final double matrix[][] = new double[2][2];
         for(int i=0;i<2;i++)
             for(int j=0;j<2;j++)
-                matrix[i][j]=Double.parseDouble(Matrix[i][j].getText().toString());
+                matrix[i][j]=Double.parseDouble(Matrix[i][j].getText().toString().equals("")?"0":Matrix[i][j].getText().toString());
         if(v.getId()==R.id.main2Next) {
             Intent intent = new Intent(this,Secondary2Activity.class);
             Bundle bundle=new Bundle();

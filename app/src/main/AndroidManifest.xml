@@ -113,6 +113,15 @@
             android:label="线代+:结果页"
             android:launchMode="singleInstance" />
 
+        <activity
+            android:name=".DefiniteActivity"
+            android:label="线代+:正定性与二次型"
+            android:launchMode="singleInstance"/>
+        <activity
+            android:name=".HelpActivity"
+            android:label="线代+:帮助"
+            android:launchMode="singleInstance"/>
+
         <service
             android:name="com.alibaba.sdk.android.push.ChannelService"
             android:exported="true"
@@ -175,7 +184,6 @@
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
-
     </application>
 
 </manifest>

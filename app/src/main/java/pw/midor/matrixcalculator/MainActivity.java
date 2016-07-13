@@ -17,60 +17,6 @@ import android.widget.Toast;
 public class MainActivity extends Activity implements View.OnClickListener{
     TextView Matrix[][] = new TextView [4][4];
     Button next,more;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        setView();
-        next=(Button)findViewById(R.id.next);
-        more=(Button)findViewById(R.id.more);
-        next.setOnClickListener(this);
-        more.setOnClickListener(this);
-    }
-    protected void setView()
-    {
-        Matrix[0][0]=(TextView)findViewById(R.id.p11);
-        Matrix[0][1]=(TextView)findViewById(R.id.p12);
-        Matrix[0][2]=(TextView)findViewById(R.id.p13);
-        Matrix[0][3]=(TextView)findViewById(R.id.p14);
-        Matrix[1][0]=(TextView)findViewById(R.id.p21);
-        Matrix[1][1]=(TextView)findViewById(R.id.p22);
-        Matrix[1][2]=(TextView)findViewById(R.id.p23);
-        Matrix[1][3]=(TextView)findViewById(R.id.p24);
-        Matrix[2][0]=(TextView)findViewById(R.id.p31);
-        Matrix[2][1]=(TextView)findViewById(R.id.p32);
-        Matrix[2][2]=(TextView)findViewById(R.id.p33);
-        Matrix[2][3]=(TextView)findViewById(R.id.p34);
-        Matrix[3][0]=(TextView)findViewById(R.id.p41);
-        Matrix[3][1]=(TextView)findViewById(R.id.p42);
-        Matrix[3][2]=(TextView)findViewById(R.id.p43);
-        Matrix[3][3]=(TextView)findViewById(R.id.p44);
-    }
-
-    final protected double SubMatrix(int x, int y, double[][] m) {
-        double d[][]=new double[3][3];
-        int xx=0,yy=0;
-        for(int i=0;i<4;i++) {
-            if(i==x)
-                continue;
-            for(int j=0;j<4;j++) {
-                if(j==y)
-                    continue;
-                d[xx][yy]=m[i][j];
-                yy++;
-            }
-            xx++;
-            yy=0;
-        }
-        return d[0][0]*d[1][1]*d[2][2]+d[0][1]*d[1][2]*d[2][0]+d[1][0]*d[2][1]*d[0][2]-d[0][2]*d[1][1]*d[2][0]-d[0][0]*d[1][2]*d[2][1]-d[0][1]*d[1][0]*d[2][2];
-    }
-
-    final protected int Determination(int times) {
-        int ans=1;
-        for(int i=1;i<=times;i++)
-            ans=-ans;
-        return ans;
-    }
 
     public static int Hessenberg(double[][] Matrix,int n,double[][]ret)
     {
@@ -136,6 +82,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         }
         return n+1;
     }
+
     ////////////
     public static void EigenValue(double[][]Matrix,int n,int LoopNu,int Erro,double[][]Ret)
     {
@@ -328,6 +275,62 @@ public class MainActivity extends Activity implements View.OnClickListener{
         }
     }
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        setView();
+        next=(Button)findViewById(R.id.next);
+        more=(Button)findViewById(R.id.more);
+        next.setOnClickListener(this);
+        more.setOnClickListener(this);
+    }
+
+    protected void setView()
+    {
+        Matrix[0][0]=(TextView)findViewById(R.id.p11);
+        Matrix[0][1]=(TextView)findViewById(R.id.p12);
+        Matrix[0][2]=(TextView)findViewById(R.id.p13);
+        Matrix[0][3]=(TextView)findViewById(R.id.p14);
+        Matrix[1][0]=(TextView)findViewById(R.id.p21);
+        Matrix[1][1]=(TextView)findViewById(R.id.p22);
+        Matrix[1][2]=(TextView)findViewById(R.id.p23);
+        Matrix[1][3]=(TextView)findViewById(R.id.p24);
+        Matrix[2][0]=(TextView)findViewById(R.id.p31);
+        Matrix[2][1]=(TextView)findViewById(R.id.p32);
+        Matrix[2][2]=(TextView)findViewById(R.id.p33);
+        Matrix[2][3]=(TextView)findViewById(R.id.p34);
+        Matrix[3][0]=(TextView)findViewById(R.id.p41);
+        Matrix[3][1]=(TextView)findViewById(R.id.p42);
+        Matrix[3][2]=(TextView)findViewById(R.id.p43);
+        Matrix[3][3]=(TextView)findViewById(R.id.p44);
+    }
+
+    final protected double SubMatrix(int x, int y, double[][] m) {
+        double d[][]=new double[3][3];
+        int xx=0,yy=0;
+        for(int i=0;i<4;i++) {
+            if(i==x)
+                continue;
+            for(int j=0;j<4;j++) {
+                if(j==y)
+                    continue;
+                d[xx][yy]=m[i][j];
+                yy++;
+            }
+            xx++;
+            yy=0;
+        }
+        return d[0][0]*d[1][1]*d[2][2]+d[0][1]*d[1][2]*d[2][0]+d[1][0]*d[2][1]*d[0][2]-d[0][2]*d[1][1]*d[2][0]-d[0][0]*d[1][2]*d[2][1]-d[0][1]*d[1][0]*d[2][2];
+    }
+
+    final protected int Determination(int times) {
+        int ans=1;
+        for(int i=1;i<=times;i++)
+            ans=-ans;
+        return ans;
+    }
+
     final public int Rank(double[][] Matrix,int error_,int List)
     {
         int n=List;
@@ -490,7 +493,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         final double matrix[][] = new double[4][4];
         for(int i=0;i<4;i++)
             for(int j=0;j<4;j++)
-                matrix[i][j]=Double.parseDouble(Matrix[i][j].getText().toString());
+                matrix[i][j]=Double.parseDouble(Matrix[i][j].getText().toString().equals("")?"0":Matrix[i][j].getText().toString());
         if(v.getId()==R.id.next) {
             Intent intent = new Intent(this,SecondaryActivity.class);
             Bundle bundle=new Bundle();

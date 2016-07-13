@@ -199,7 +199,7 @@ public class RegularActivity extends Activity implements View.OnClickListener{
                         public void onClick(DialogInterface dialog, int which) {
                             Intent intent = new Intent();
                             intent.setAction(Intent.ACTION_SEND);
-                            intent.putExtra(Intent.EXTRA_TEXT," 我在线代+的矩阵运算练习中等模式下获得了" +Integer.toString(score) + "分!\n线代+，你专属的线代助手！http://apkl.oss-cn-qingdao.aliyuncs.com/pw.linearalgebraplus_v1.0beta.apk");
+                            intent.putExtra(Intent.EXTRA_TEXT," 我在线代+的矩阵运算练习中等模式下获得了" +Integer.toString(score) + "分!\n线代+，你专属的线代助手！\nhttp://midor.pw/subs/LinearAlgebraPlus.html");
                             intent.setType("text/plain");
                             startActivity(Intent.createChooser(intent,"分享你的成绩"));
                         }

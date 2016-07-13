@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pw.midor.matrixcalculator.HelpActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.87"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0.14"
+                android:src="@mipmap/icon" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="线代+是一个期望帮助人们更好的学习线性代数的app." />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="截至目前版本(v1.1b),实现的功能主要有矩阵计算,二次型判定,矩阵计算练习等等." />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="在主界面向右滑动可以打开菜单,可选的功能有矩阵计算器,矩阵运算练习,正定型与二次型以及常用公式与定理。" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="在矩阵计算器界面中,假如你需要对单个矩阵进行运算(如求逆矩阵),你可以直接点击&quot;对此矩阵进行运算&quot;按钮,菜单中会提供全部可选的功能.假如运算非法,app会指出.假如你要进行多个矩阵的运算,你可以点击&quot;输入第二个矩阵&quot;按钮继续你的输入." />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="在矩阵运算练习界面中,你首先需要选择难度;简单,中等,困难分别对应了2,3,4阶的矩阵;程序会随机生成试题供你作答.每当你做完一道题,屏幕上会显示出你的答案是否正确,若不正确,还会显示正确答案.在你答完全部的试题后,你还可以将你的成绩分享给其他人." />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="对于常用公式与定理功能,需要手机上已经安装了doc文件阅读器." />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.06"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/aboutBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="返回" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
